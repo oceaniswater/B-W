@@ -24,12 +24,14 @@ extension ProductResponseDTO {
             case description
             case priceData = "price_data"
             case media
+            case rating
         }
 
         let name: String?
         let description: String?
         let priceData: [ProductPriceDTO]?
         let media: [ProductMediaDTO]?
+        let rating: Double?
     }
 
     struct ProductPriceDTO: Decodable {
@@ -65,6 +67,7 @@ extension ProductResponseDTO.ProductDTO {
                      name: attributes.name,
                      description: attributes.description,
                      price: priceString,
-                     imagePath: attributes.media?.first?.url)
+                     imagePath: attributes.media?.first?.url,
+                     rating: attributes.rating)
     }
 }

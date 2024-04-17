@@ -5,6 +5,7 @@ struct ProductsListItemViewModel: Equatable {
     let price: String
     let description: String
     let imagePath: String
+    let rating: Double
 }
 
 extension ProductsListItemViewModel {
@@ -13,5 +14,6 @@ extension ProductsListItemViewModel {
         self.price = product.price ?? ""
         self.description = product.description ?? ""
         self.imagePath = product.imagePath ?? ""
+        self.rating = product.rating ?? 0.0
     }
 }
