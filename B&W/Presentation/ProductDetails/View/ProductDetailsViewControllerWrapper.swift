@@ -7,24 +7,33 @@
 //
 
 import UIKit
+import SwiftUI
 
 class ProductDetailsViewControllerWrapper: UIViewController {
+        
+    private var viewModel: AnyProductDetailsViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = viewModel?.product?.name
 
-        // Do any additional setup after loading the view.
+        let childView = UIHostingController(rootView: ProductDetailsView(vm: viewModel))
+        addChild(childView)
+        view.addSubview(childView.view)
+        
+        childView.view.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            childView.view.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            childView.view.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            childView.view.topAnchor.constraint(equalTo: view.topAnchor),
+            childView.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    static func create(with viewModel: DefaultProductDetailsViewModel) -> ProductDetailsViewControllerWrapper {
+        let view = ProductDetailsViewControllerWrapper()
+        view.viewModel = AnyProductDetailsViewModel(viewModel)
+        return view
     }
-    */
-
 }

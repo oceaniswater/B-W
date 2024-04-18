@@ -1,45 +1,36 @@
+//
+//  ProductDetailsViewModel2.swift
+//  B&W
+//
+//  Created by Mark Golubev on 17/04/2024.
+//  Copyright © 2024 Artemis Simple Solutions Ltd. All rights reserved.
+//
+
 import Foundation
 
-protocol ProductDetailsViewModelInput {
-    func updateImage()
+protocol ProductDetailsViewModel: ObservableObject {
+    var product: Product? { get set }
 }
 
-protocol ProductDetailsViewModelOutput {
-    var name: String { get }
-    var image: Observable<Data?> { get }
-    var description: String { get }
-    var price: String { get }
-}
-
-protocol ProductDetailsViewModel: ProductDetailsViewModelInput, ProductDetailsViewModelOutput { }
-
-final class DefaultProductDetailsViewModel: ProductDetailsViewModel {
-
-    private let imagePath: String?
-
-    let name: String
-    let image: Observable<Data?> = Observable(nil)
-    let description: String
-    let price: String
-
+class DefaultProductDetailsViewModel: ProductDetailsViewModel {
+    @Published var product: Product?
+    
     init(product: Product) {
-        self.name = product.name ?? ""
-        self.description = product.description ?? ""
-        self.imagePath = product.imagePath
-        self.price = product.price ?? ""
+        self.product = product
     }
 }
 
-extension DefaultProductDetailsViewModel {
-    func updateImage() {
-        guard let imagePath = imagePath else { return }
+class AnyProductDetailsViewModel: ProductDetailsViewModel {
+    private let _product: () -> Product?
+    private let _setProduct: (Product?) -> Void
 
-        let url = URL(string: imagePath)!
+    var product: Product? {
+        get { _product() }
+        set { _setProduct(newValue) }
+    }
 
-        // Fetch Image Data
-        if let data = try? Data(contentsOf: url) {
-            // Create Image and Update Image View
-            self.image.value = data
-        }
+    init<VM: ProductDetailsViewModel>(_ viewModel: VM) {
+        _product = { viewModel.product }
+        _setProduct = { viewModel.product = $0 }
     }
 }
