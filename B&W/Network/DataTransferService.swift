@@ -61,6 +61,13 @@ extension DefaultDataTransferService: DataTransferService {
     private func decode<T: Decodable>(data: Data?, decoder: ResponseDecoder) -> Result<T, DataTransferError> {
         do {
             guard let data = data else { return .failure(.noResponse) }
+            
+            // Don't decode data if func should return Data
+            if T.self == Data.self {
+                let result: T = data as! T
+                return .success(result)
+            }
+            
             let result: T = try decoder.decode(data)
             return .success(result)
         } catch {

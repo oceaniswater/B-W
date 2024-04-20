@@ -88,9 +88,27 @@ extension DefaultNetworkService: NetworkService {
 
 public class DefaultNetworkSessionManager: NetworkSessionManager {
     public init() {}
-    public func request(_ request: URLRequest,
-                        completion: @escaping CompletionHandler) -> NetworkCancellable {
-        let task = URLSession.shared.dataTask(with: request, completionHandler: completion)
+    public func request(_ request: URLRequest, completion: @escaping CompletionHandler) -> NetworkCancellable {
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            // Handle errors from URLSession
+            if let error = error {
+                completion(nil, nil, error)
+                return
+            }
+            
+            // Ensure response and data are not nil before passing them to the completion handler
+            guard let response = response as? HTTPURLResponse, let data = data else {
+                let error = NSError(domain: "InvalidResponse", code: -1, userInfo: nil)
+                completion(nil, nil, error)
+                return
+            }
+            
+            // Invoke the completion handler on the main thread
+            DispatchQueue.main.async {
+                completion(data, response, nil)
+            }
+        }
+        
         task.resume()
         return task
     }

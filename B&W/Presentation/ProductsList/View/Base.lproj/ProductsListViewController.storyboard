@@ -50,9 +50,13 @@
                                             </constraints>
                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default" weight="thin"/>
                                         </imageView>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="hqw-tn-V6z">
+                                            <rect key="frame" x="242" y="60" width="20" height="20"/>
+                                        </activityIndicatorView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="XGq-Uy-d1h" firstAttribute="leading" secondItem="OFe-Ol-Ban" secondAttribute="leading" id="ACM-u4-XlX"/>
+                                        <constraint firstItem="hqw-tn-V6z" firstAttribute="centerY" secondItem="80P-Ld-5tO" secondAttribute="centerY" id="BUf-cP-k1g"/>
                                         <constraint firstItem="i38-xt-A9c" firstAttribute="centerY" secondItem="80P-Ld-5tO" secondAttribute="centerY" id="FHZ-3j-Rg7"/>
                                         <constraint firstItem="i38-xt-A9c" firstAttribute="leading" secondItem="cEm-mY-Fzs" secondAttribute="trailing" constant="8" symbolic="YES" id="L2i-ZQ-O9S"/>
                                         <constraint firstAttribute="trailing" secondItem="i38-xt-A9c" secondAttribute="trailing" constant="16" id="Lgb-mh-qPy"/>
@@ -60,6 +64,7 @@
                                         <constraint firstItem="cEm-mY-Fzs" firstAttribute="top" secondItem="80P-Ld-5tO" secondAttribute="topMargin" id="Qrf-1r-aAq"/>
                                         <constraint firstItem="cEm-mY-Fzs" firstAttribute="leading" secondItem="80P-Ld-5tO" secondAttribute="leadingMargin" constant="4" id="SrX-bF-na6"/>
                                         <constraint firstAttribute="bottom" secondItem="OFe-Ol-Ban" secondAttribute="bottom" constant="11" id="UZ4-ED-ews"/>
+                                        <constraint firstAttribute="trailing" secondItem="hqw-tn-V6z" secondAttribute="trailing" constant="58" id="V3j-bl-zCC"/>
                                         <constraint firstItem="i38-xt-A9c" firstAttribute="leading" secondItem="XGq-Uy-d1h" secondAttribute="trailing" constant="8" symbolic="YES" id="VN6-o3-Shv"/>
                                         <constraint firstItem="XGq-Uy-d1h" firstAttribute="top" secondItem="cEm-mY-Fzs" secondAttribute="bottom" constant="8" id="X5U-4d-zpg"/>
                                         <constraint firstItem="cEm-mY-Fzs" firstAttribute="leading" secondItem="XGq-Uy-d1h" secondAttribute="leading" id="YrO-lw-I1y"/>
@@ -67,6 +72,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="activityIndicatorView" destination="hqw-tn-V6z" id="zNu-5D-rnS"/>
                                     <outlet property="descriptionLabel" destination="OFe-Ol-Ban" id="hxb-AQ-v74"/>
                                     <outlet property="nameLabel" destination="cEm-mY-Fzs" id="S1L-gX-0Is"/>
                                     <outlet property="priceLabel" destination="XGq-Uy-d1h" id="P3w-Sw-hyU"/>

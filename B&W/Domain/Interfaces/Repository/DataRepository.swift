@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+protocol DataRepository {
+    func fetchData(path: String,
+                           completion: @escaping (Result<Data, Error>) -> Void) -> Cancellable?
+}

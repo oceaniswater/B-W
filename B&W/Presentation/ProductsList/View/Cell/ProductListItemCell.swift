@@ -9,7 +9,8 @@ final class ProductListItemCell: UITableViewCell {
     @IBOutlet private var priceLabel: UILabel!
     @IBOutlet private var descriptionLabel: UILabel!
     @IBOutlet private var productImageView: UIImageView!
-
+    @IBOutlet var activityIndicatorView: UIActivityIndicatorView!
+    
     private var viewModel: ProductsListItemViewModel!
 
     func fill(with viewModel: ProductsListItemViewModel) {
@@ -21,15 +22,25 @@ final class ProductListItemCell: UITableViewCell {
         updateImage()
     }
 
+    // MARK: - Private functions
+    
     private func updateImage() {
         productImageView.image = nil
+        activityIsRunning(true)
 
-        let url = URL(string: viewModel.imagePath)!
-
-        // Fetch Image Data
-        if let data = try? Data(contentsOf: url) {
-            // Create Image and Update Image View
-            self.productImageView.image = UIImage(data: data)
+        viewModel.getImageData(completion: { [weak self] data in
+            self?.activityIsRunning(false)
+            self?.productImageView.image = UIImage(data: data)
+        })
+    }
+    
+    private func activityIsRunning(_ isRunning: Bool) {
+        if isRunning {
+            activityIndicatorView.isHidden = false
+            activityIndicatorView.startAnimating()
+        } else {
+            activityIndicatorView.stopAnimating()
+            activityIndicatorView.isHidden = true
         }
     }
 }

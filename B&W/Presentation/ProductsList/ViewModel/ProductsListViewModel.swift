@@ -2,7 +2,6 @@ import Foundation
 
 struct ProductsListViewModelActions {
     let showProductDetails: (Product) -> Void
-
 }
 
 protocol ProductsListViewModelInput {
@@ -32,6 +31,7 @@ final class DefaultProductsListViewModel: ProductsListViewModel {
     var isEmpty: Bool { return items.value.isEmpty }
 
     private let useCase: GetProductsUseCase
+    private let productItemUseCase: GetProductItemUseCase
 
     private let actions: ProductsListViewModelActions?
 
@@ -41,8 +41,9 @@ final class DefaultProductsListViewModel: ProductsListViewModel {
 
     // MARK: - Init
 
-    init(useCase: GetProductsUseCase, actions: ProductsListViewModelActions? = nil) {
+    init(useCase: GetProductsUseCase, productItemUseCase: GetProductItemUseCase, actions: ProductsListViewModelActions? = nil) {
         self.useCase = useCase
+        self.productItemUseCase = productItemUseCase
         self.actions = actions
     }
 
@@ -56,7 +57,11 @@ final class DefaultProductsListViewModel: ProductsListViewModel {
                 switch result {
                 case .success(let data):
                     self.products = data.products
-                    self.items.value = data.products.map(ProductsListItemViewModel.init)
+                    self.items.value = data.products.map { product in
+                        let vm = ProductsListItemViewModel(product: product)
+                        vm.useCase = self.productItemUseCase
+                        return vm
+                    }
                 case .failure(let error):
                     self.error.value = error.isInternetConnectionError ?
                         NSLocalizedString("No internet connection", comment: "") :
@@ -70,7 +75,6 @@ final class DefaultProductsListViewModel: ProductsListViewModel {
 
 extension DefaultProductsListViewModel {
     func viewDidLoad() {
-
         load(productQuery: .init(query: query))
     }
 
