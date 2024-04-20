@@ -18,6 +18,7 @@ struct ProductDetailsView: View {
                 AsyncImage(url: URL(string: vm.imagePath ?? "")) { image in
                     image
                         .scaledToFit()
+                        .accessibilityHidden(false)
                         .accessibilityLabel("Product image")
                 } placeholder: {
                     ProgressView()
@@ -26,17 +27,17 @@ struct ProductDetailsView: View {
                 
                 FiveStarView(rating: vm.rating ?? 0.0, color: .yellow, backgroundColor: Color(uiColor: UIColor.systemGray5))
                     .frame(minWidth: 1, idealWidth: 200, maxWidth: 300, minHeight: 1, idealHeight: 16, maxHeight: 30, alignment: .center)
-                    .accessibilityLabel("Product rating")
+                    .accessibilityLabel("Product rating: \(vm.rating ?? 0.0)")
                 
-                Text(vm.price ?? "0.00")
+                Text(vm.price ?? "£0.00")
                     .font(.headline)
-                    .accessibilityLabel("Price")
+                    .accessibilityLabel("Price \(vm.price ?? "£0.00")")
                 
                 Text(vm.description ?? "")
                     .font(.body)
                     .multilineTextAlignment(.leading)
                     .padding(.horizontal)
-                    .accessibilityLabel("Product description")
+                    .accessibilityLabel("Product description: \(vm.description ?? "")")
             }
             .padding()
         }

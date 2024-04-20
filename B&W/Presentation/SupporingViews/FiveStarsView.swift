@@ -32,6 +32,7 @@ public struct FiveStarView: View {
                 ForegroundStars(rating: rating, color: color)
             }
             .scaledToFit()
+            .accessibilityHidden(true)
             
             Text("avg. \(rating) (\(Int.random(in: 100...10000)))")
                 .scaledToFill()
