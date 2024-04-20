@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:B&amp;W.xcodeproj">
+      location = "self:/Users/markgolubev/ios projects/iOS-tech-test-main/Bloom.xcodeproj">
    </FileRef>
 </Workspace>

@@ -18,9 +18,9 @@ class ProductDetailsViewControllerWrapper: UIViewController {
         setupView()
     }
     
-    static func create(with viewModel: DefaultProductDetailsViewModel) -> ProductDetailsViewControllerWrapper {
+    static func create(with viewModel: AnyProductDetailsViewModel) -> ProductDetailsViewControllerWrapper {
         let view = ProductDetailsViewControllerWrapper()
-        view.viewModel = AnyProductDetailsViewModel(viewModel)
+        view.viewModel = viewModel
         return view
     }
 }

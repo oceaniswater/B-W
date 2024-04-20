@@ -40,6 +40,7 @@
 		86A2C52D2BD0567D003A50A1 /* ProductDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A2C52C2BD0567D003A50A1 /* ProductDetailsViewModel.swift */; };
 		86A2C5302BD05CFA003A50A1 /* FiveStarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A2C52F2BD05CFA003A50A1 /* FiveStarsView.swift */; };
 		86A2C5322BD06775003A50A1 /* ProductDetailsViewControllerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A2C5312BD06775003A50A1 /* ProductDetailsViewControllerWrapper.swift */; };
+		86CB34A52BD4269500753896 /* ProuctDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CB34A42BD4269500753896 /* ProuctDetailsViewModelTests.swift */; };
 		86EF6F3F2BD177BB00AC271B /* DataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF6F3E2BD177BB00AC271B /* DataRepository.swift */; };
 		86EF6F412BD1782500AC271B /* GetProductItemUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF6F402BD1782500AC271B /* GetProductItemUseCase.swift */; };
 		86EF6F432BD17D7A00AC271B /* DefaultDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF6F422BD17D7A00AC271B /* DefaultDataRepository.swift */; };
@@ -64,15 +65,15 @@
 
 /* Begin PBXFileReference section */
 		2B481AC7251686C400E72283 /* ConnectionError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionError.swift; sourceTree = "<group>"; };
-		2B89123F251356A5004BC46D /* B&W.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "B&W.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B89123F251356A5004BC46D /* Bloom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bloom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B891242251356A5004BC46D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B89124B251356A7004BC46D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B89124E251356A7004BC46D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2B891250251356A7004BC46D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2B891255251356A7004BC46D /* B&WTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "B&WTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B891255251356A7004BC46D /* BloomTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BloomTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B891259251356A7004BC46D /* ProductsListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsListViewModelTests.swift; sourceTree = "<group>"; };
 		2B89125B251356A7004BC46D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2B891260251356A7004BC46D /* B&WUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "B&WUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B891260251356A7004BC46D /* BloomUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BloomUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B891264251356A7004BC46D /* B_WUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = B_WUITests.swift; sourceTree = "<group>"; };
 		2B891266251356A7004BC46D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B89127225135907004BC46D /* ProductsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsListViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +103,7 @@
 		86A2C52C2BD0567D003A50A1 /* ProductDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewModel.swift; sourceTree = "<group>"; };
 		86A2C52F2BD05CFA003A50A1 /* FiveStarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiveStarsView.swift; sourceTree = "<group>"; };
 		86A2C5312BD06775003A50A1 /* ProductDetailsViewControllerWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewControllerWrapper.swift; sourceTree = "<group>"; };
+		86CB34A42BD4269500753896 /* ProuctDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProuctDetailsViewModelTests.swift; sourceTree = "<group>"; };
 		86EF6F3E2BD177BB00AC271B /* DataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataRepository.swift; sourceTree = "<group>"; };
 		86EF6F402BD1782500AC271B /* GetProductItemUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetProductItemUseCase.swift; sourceTree = "<group>"; };
 		86EF6F422BD17D7A00AC271B /* DefaultDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDataRepository.swift; sourceTree = "<group>"; };
@@ -145,9 +147,9 @@
 		2B891240251356A5004BC46D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2B89123F251356A5004BC46D /* B&W.app */,
-				2B891255251356A7004BC46D /* B&WTests.xctest */,
-				2B891260251356A7004BC46D /* B&WUITests.xctest */,
+				2B89123F251356A5004BC46D /* Bloom.app */,
+				2B891255251356A7004BC46D /* BloomTests.xctest */,
+				2B891260251356A7004BC46D /* BloomUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -170,6 +172,7 @@
 			children = (
 				2B891259251356A7004BC46D /* ProductsListViewModelTests.swift */,
 				2B89125B251356A7004BC46D /* Info.plist */,
+				86CB34A42BD4269500753896 /* ProuctDetailsViewModelTests.swift */,
 			);
 			path = "B&WTests";
 			sourceTree = "<group>";
@@ -399,9 +402,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2B89123E251356A5004BC46D /* B&W */ = {
+		2B89123E251356A5004BC46D /* Bloom */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2B891269251356A7004BC46D /* Build configuration list for PBXNativeTarget "B&W" */;
+			buildConfigurationList = 2B891269251356A7004BC46D /* Build configuration list for PBXNativeTarget "Bloom" */;
 			buildPhases = (
 				2B89123B251356A5004BC46D /* Sources */,
 				2B89123C251356A5004BC46D /* Frameworks */,
@@ -411,14 +414,14 @@
 			);
 			dependencies = (
 			);
-			name = "B&W";
+			name = Bloom;
 			productName = "B&W";
-			productReference = 2B89123F251356A5004BC46D /* B&W.app */;
+			productReference = 2B89123F251356A5004BC46D /* Bloom.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2B891254251356A7004BC46D /* B&WTests */ = {
+		2B891254251356A7004BC46D /* BloomTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2B89126C251356A7004BC46D /* Build configuration list for PBXNativeTarget "B&WTests" */;
+			buildConfigurationList = 2B89126C251356A7004BC46D /* Build configuration list for PBXNativeTarget "BloomTests" */;
 			buildPhases = (
 				2B891251251356A7004BC46D /* Sources */,
 				2B891252251356A7004BC46D /* Frameworks */,
@@ -429,14 +432,14 @@
 			dependencies = (
 				2B891257251356A7004BC46D /* PBXTargetDependency */,
 			);
-			name = "B&WTests";
+			name = BloomTests;
 			productName = "B&WTests";
-			productReference = 2B891255251356A7004BC46D /* B&WTests.xctest */;
+			productReference = 2B891255251356A7004BC46D /* BloomTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		2B89125F251356A7004BC46D /* B&WUITests */ = {
+		2B89125F251356A7004BC46D /* BloomUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2B89126F251356A7004BC46D /* Build configuration list for PBXNativeTarget "B&WUITests" */;
+			buildConfigurationList = 2B89126F251356A7004BC46D /* Build configuration list for PBXNativeTarget "BloomUITests" */;
 			buildPhases = (
 				2B89125C251356A7004BC46D /* Sources */,
 				2B89125D251356A7004BC46D /* Frameworks */,
@@ -447,9 +450,9 @@
 			dependencies = (
 				2B891262251356A7004BC46D /* PBXTargetDependency */,
 			);
-			name = "B&WUITests";
+			name = BloomUITests;
 			productName = "B&WUITests";
-			productReference = 2B891260251356A7004BC46D /* B&WUITests.xctest */;
+			productReference = 2B891260251356A7004BC46D /* BloomUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -477,7 +480,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2B89123A251356A5004BC46D /* Build configuration list for PBXProject "B&W" */;
+			buildConfigurationList = 2B89123A251356A5004BC46D /* Build configuration list for PBXProject "Bloom" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -490,9 +493,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2B89123E251356A5004BC46D /* B&W */,
-				2B891254251356A7004BC46D /* B&WTests */,
-				2B89125F251356A7004BC46D /* B&WUITests */,
+				2B89123E251356A5004BC46D /* Bloom */,
+				2B891254251356A7004BC46D /* BloomTests */,
+				2B89125F251356A7004BC46D /* BloomUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -567,6 +570,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86CB34A52BD4269500753896 /* ProuctDetailsViewModelTests.swift in Sources */,
 				2B89125A251356A7004BC46D /* ProductsListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -584,12 +588,12 @@
 /* Begin PBXTargetDependency section */
 		2B891257251356A7004BC46D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2B89123E251356A5004BC46D /* B&W */;
+			target = 2B89123E251356A5004BC46D /* Bloom */;
 			targetProxy = 2B891256251356A7004BC46D /* PBXContainerItemProxy */;
 		};
 		2B891262251356A7004BC46D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2B89123E251356A5004BC46D /* B&W */;
+			target = 2B89123E251356A5004BC46D /* Bloom */;
 			targetProxy = 2B891261251356A7004BC46D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -666,7 +670,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -722,7 +726,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -783,7 +787,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 922R4697G4;
 				INFOPLIST_FILE = "B&WTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -793,7 +797,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/B&W.app/B&W";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bloom.app/Bloom";
 			};
 			name = Debug;
 		};
@@ -805,7 +809,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 922R4697G4;
 				INFOPLIST_FILE = "B&WTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -815,7 +819,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/B&W.app/B&W";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bloom.app/Bloom";
 			};
 			name = Release;
 		};
@@ -862,7 +866,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2B89123A251356A5004BC46D /* Build configuration list for PBXProject "B&W" */ = {
+		2B89123A251356A5004BC46D /* Build configuration list for PBXProject "Bloom" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2B891267251356A7004BC46D /* Debug */,
@@ -871,7 +875,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2B891269251356A7004BC46D /* Build configuration list for PBXNativeTarget "B&W" */ = {
+		2B891269251356A7004BC46D /* Build configuration list for PBXNativeTarget "Bloom" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2B89126A251356A7004BC46D /* Debug */,
@@ -880,7 +884,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2B89126C251356A7004BC46D /* Build configuration list for PBXNativeTarget "B&WTests" */ = {
+		2B89126C251356A7004BC46D /* Build configuration list for PBXNativeTarget "BloomTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2B89126D251356A7004BC46D /* Debug */,
@@ -889,7 +893,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2B89126F251356A7004BC46D /* Build configuration list for PBXNativeTarget "B&WUITests" */ = {
+		2B89126F251356A7004BC46D /* Build configuration list for PBXNativeTarget "BloomUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2B891270251356A7004BC46D /* Debug */,

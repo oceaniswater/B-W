@@ -51,8 +51,8 @@ final class DependencyContainer {
                                           actions: actions)
     }
 
-    func makeProductDetailsViewModel(product: Product) -> DefaultProductDetailsViewModel {
-        return DefaultProductDetailsViewModel(product: product)
+    func makeProductDetailsViewModel(product: Product) -> AnyProductDetailsViewModel {
+        return AnyProductDetailsViewModel(DefaultProductDetailsViewModel(product: product))
     }
 
     // MARK: - Flow Coordinators

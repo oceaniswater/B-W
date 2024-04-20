@@ -30,6 +30,7 @@ class DefaultProductDetailsViewModel: ProductDetailsViewModel {
         self.description = product.description ?? ""
         self.rating = Decimal(product.rating ?? 0.0)
     }
+    
 }
 
 // MARK: - ProductDetailsViewModel wrapper
