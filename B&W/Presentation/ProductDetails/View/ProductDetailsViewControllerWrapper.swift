@@ -10,13 +10,26 @@ import UIKit
 import SwiftUI
 
 class ProductDetailsViewControllerWrapper: UIViewController {
-        
+    
     private var viewModel: AnyProductDetailsViewModel!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = viewModel?.product?.name
+        setupView()
+    }
+    
+    static func create(with viewModel: DefaultProductDetailsViewModel) -> ProductDetailsViewControllerWrapper {
+        let view = ProductDetailsViewControllerWrapper()
+        view.viewModel = AnyProductDetailsViewModel(viewModel)
+        return view
+    }
+}
 
+// MARK: - Setup View
+private extension ProductDetailsViewControllerWrapper {
+    func setupView() {
+        title = viewModel.name
+        
         let childView = UIHostingController(rootView: ProductDetailsView(vm: viewModel))
         addChild(childView)
         view.addSubview(childView.view)
@@ -28,12 +41,5 @@ class ProductDetailsViewControllerWrapper: UIViewController {
             childView.view.topAnchor.constraint(equalTo: view.topAnchor),
             childView.view.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
-        
-    }
-    
-    static func create(with viewModel: DefaultProductDetailsViewModel) -> ProductDetailsViewControllerWrapper {
-        let view = ProductDetailsViewControllerWrapper()
-        view.viewModel = AnyProductDetailsViewModel(viewModel)
-        return view
     }
 }

@@ -32,7 +32,9 @@ final class GetProductsFlowCoordinator {
     }
 
     private func showProductDetails(product: Product) {
-        let vc = dependencies.makeProductDetailsViewController(product: product)
-        productsListVC?.navigationController?.pushViewController(vc, animated: true)
+        guard let navigationController = productsListVC?.navigationController else { return }
+        let productsDetailsDependencies = AppDependenciesContainer().makeProductsDetailsDependenciesContainer()
+        let flow = productsDetailsDependencies.makeGetProductDetailsFlowCoordinator(product: product, navigationController: navigationController)
+        flow.start()
     }
 }
