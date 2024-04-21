@@ -1,5 +1,5 @@
 //
-//  GetProductItemUseCase.swift
+//  GetImageDataUseCase.swift
 //  B&W
 //
 //  Created by Mark Golubev on 18/04/2024.
@@ -8,12 +8,12 @@
 
 import Foundation
 
-protocol GetProductItemUseCase {
+protocol GetImageDataUseCase {
     func execute(requestValue: GetProductItemUseCaseValue,
                  completion: @escaping (Result<Data, Error>) -> Void) -> Cancellable?
 }
 
-final class DefaultGetProductItemUseCase: GetProductItemUseCase {
+final class DefaultGetImageDataUseCase: GetImageDataUseCase {
 
     private let dataRepository: DataRepository
 

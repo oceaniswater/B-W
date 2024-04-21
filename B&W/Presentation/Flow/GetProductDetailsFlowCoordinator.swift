@@ -9,7 +9,7 @@
 import UIKit
 
 protocol GetProductDetailsFlowCoordinatorDependencies {
-    func makeProductDetailsViewController(product: Product) -> ProductDetailsViewControllerWrapper
+    func makeProductDetailsViewController<VM: ProductDetailsViewModel>(product: Product) -> ProductDetailsViewControllerWrapper<VM>
 }
 
 final class GetProductDetailsFlowCoordinator {
@@ -27,8 +27,17 @@ final class GetProductDetailsFlowCoordinator {
         self.dependencies = dependencies
     }
 
+    /// Initiates the flow for presenting the product details screen.
+    ///
+    /// - Note: This method is responsible for starting the flow for displaying the details of a product.
+    ///
+    /// - Important: This method must be called to initiate the product details flow.
+    ///
+    /// - Warning: Ensure that the navigation controller is set before calling this method to avoid runtime errors.
+    ///
+    /// - Precondition: The dependencies object must be properly configured to provide the necessary dependencies.
     func start() {
-        let vc = dependencies.makeProductDetailsViewController(product: product)
+        let vc: ProductDetailsViewControllerWrapper<DefaultProductDetailsViewModel> = dependencies.makeProductDetailsViewController(product: product)
         navigationController?.pushViewController(vc, animated: true)
     }
 }

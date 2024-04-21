@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+/// A view displaying a star rating with a given rating value.
 public struct FiveStarView: View {
     var rating: Decimal
     var color: Color
@@ -40,12 +41,13 @@ public struct FiveStarView: View {
     }
 }
 
-
+/// A single rating star view used in the star rating.
 struct RatingStar: View {
     var rating: CGFloat
     var color: Color
     var index: Int
     
+    /// Calculates the mask ratio for the star based on the rating value.
     var maskRatio: CGFloat {
         let mask = rating - CGFloat(index)
         
@@ -80,7 +82,7 @@ struct RatingStar: View {
     }
 }
 
-
+/// A single star image view used in the star rating.
 private struct StarImage: View {
     
     var body: some View {
@@ -90,7 +92,7 @@ private struct StarImage: View {
     }
 }
 
-
+/// A view representing the background stars in the star rating.
 private struct BackgroundStars: View {
     var color: Color
     
@@ -109,7 +111,7 @@ private struct BackgroundStars: View {
     }
 }
 
-
+/// A view representing the foreground stars (filled stars) in the star rating based on the given rating value.
 private struct ForegroundStars: View {
     var rating: Decimal
     var color: Color

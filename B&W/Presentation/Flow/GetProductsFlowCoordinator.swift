@@ -2,7 +2,7 @@ import UIKit
 
 protocol GetProductsFlowCoordinatorDependencies {
     func makeProductsListViewController(actions: ProductsListViewModelActions) -> ProductsListViewController
-    func makeProductDetailsViewController(product: Product) -> ProductDetailsViewControllerWrapper
+    func makeProductDetailsViewController<VM: ProductDetailsViewModel>(product: Product) -> ProductDetailsViewControllerWrapper<VM>
 }
 
 final class GetProductsFlowCoordinator {

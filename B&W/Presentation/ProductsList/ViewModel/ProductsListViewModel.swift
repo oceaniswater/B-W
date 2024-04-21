@@ -31,7 +31,7 @@ final class DefaultProductsListViewModel: ProductsListViewModel {
     var isEmpty: Bool { return items.value.isEmpty }
 
     private let useCase: GetProductsUseCase
-    private let productItemUseCase: GetProductItemUseCase
+    private let productItemUseCase: GetImageDataUseCase
 
     private let actions: ProductsListViewModelActions?
 
@@ -41,7 +41,12 @@ final class DefaultProductsListViewModel: ProductsListViewModel {
 
     // MARK: - Init
 
-    init(useCase: GetProductsUseCase, productItemUseCase: GetProductItemUseCase, actions: ProductsListViewModelActions? = nil) {
+    /// Initializes the `DefaultProductsListViewModel`.
+    /// - Parameters:
+    ///   - useCase: The use case for fetching products.
+    ///   - productItemUseCase: The use case for fetching product item data.
+    ///   - actions: Optional actions to be performed by the view model.
+    init(useCase: GetProductsUseCase, productItemUseCase: GetImageDataUseCase, actions: ProductsListViewModelActions? = nil) {
         self.useCase = useCase
         self.productItemUseCase = productItemUseCase
         self.actions = actions
@@ -57,11 +62,7 @@ final class DefaultProductsListViewModel: ProductsListViewModel {
                 switch result {
                 case .success(let data):
                     self.products = data.products
-                    self.items.value = data.products.map { product in
-                        let vm = ProductsListItemViewModel(product: product)
-                        vm.useCase = self.productItemUseCase
-                        return vm
-                    }
+                    self.items.value = data.products.map {ProductsListItemViewModel(product: $0, useCase: self.productItemUseCase)}
                 case .failure(let error):
                     self.error.value = error.isInternetConnectionError ?
                         NSLocalizedString("No internet connection", comment: "") :

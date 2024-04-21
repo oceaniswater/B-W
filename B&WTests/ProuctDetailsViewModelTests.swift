@@ -36,25 +36,6 @@ final class ProuctDetailsViewModelTests: XCTestCase {
         XCTAssertEqual(expectedImagePath, vm.imagePath)
         XCTAssertEqual(Decimal(expectedRating), vm.rating)
     }
-    
-    func test_AnyProductDetailsViewModel_createdWithValidVM() throws {
-        let expectedName = "Product2"
-        let expectedDescription = "Description"
-        let expectedPrice = "£123.00"
-        let expectedImagePath = "https://example.com/123"
-        let expectedRating = 1.5
-        
-        
-        let product = Product(id: "123", name: expectedName, description: expectedDescription, price: expectedPrice, imagePath: expectedImagePath, rating: expectedRating)
-        let vm = DefaultProductDetailsViewModel(product: product)
-        let wrapper = AnyProductDetailsViewModel(vm)
-        
-        XCTAssertEqual(expectedName, wrapper.name)
-        XCTAssertEqual(expectedDescription, wrapper.description)
-        XCTAssertEqual(expectedPrice, wrapper.price)
-        XCTAssertEqual(expectedImagePath, wrapper.imagePath)
-        XCTAssertEqual(Decimal(expectedRating), wrapper.rating)
-    }
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.

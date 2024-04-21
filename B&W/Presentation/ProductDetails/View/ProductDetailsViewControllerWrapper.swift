@@ -9,16 +9,17 @@
 import UIKit
 import SwiftUI
 
-class ProductDetailsViewControllerWrapper: UIViewController {
+/// A view controller wrapper for displaying product details using SwiftUI views.
+class ProductDetailsViewControllerWrapper<VM: ProductDetailsViewModel>: UIViewController {
     
-    private var viewModel: AnyProductDetailsViewModel!
+    private var viewModel: VM!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
     }
     
-    static func create(with viewModel: AnyProductDetailsViewModel) -> ProductDetailsViewControllerWrapper {
+    static func create(with viewModel: VM) -> ProductDetailsViewControllerWrapper {
         let view = ProductDetailsViewControllerWrapper()
         view.viewModel = viewModel
         return view
@@ -26,7 +27,9 @@ class ProductDetailsViewControllerWrapper: UIViewController {
 }
 
 // MARK: - Setup View
+
 private extension ProductDetailsViewControllerWrapper {
+    /// Sets up the view with SwiftUI hosting controller.
     func setupView() {
         title = viewModel.name
         
