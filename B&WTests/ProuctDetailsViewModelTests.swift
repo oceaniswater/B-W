@@ -11,13 +11,26 @@ import XCTest
 @testable import Bloom
 final class ProuctDetailsViewModelTests: XCTestCase {
     
-    override func setUpWithError() throws {
-
+    // MARK: - Mocks
+    
+    class MockGetImageDataUseCase: GetImageDataUseCase {
+        var imageData: Data?
+        
+        init(imageData: Data? = nil) {
+            self.imageData = imageData
+        }
+        
+        func execute(requestValue: GetProductItemUseCaseValue, completion: @escaping (Result<Data, any Error>) -> Void) -> (any Cancellable)? {
+            if let imageData = imageData {
+                completion(.success(imageData))
+            } else {
+                completion(.failure(NSError(domain: "500", code: 500)))
+            }
+            return nil
+        }
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+    
+    // MARK: - Tests
 
     func test_ProductDetailsViewModel_createdWithValidProduct() throws {
         let expectedName = "Product2"
@@ -36,12 +49,17 @@ final class ProuctDetailsViewModelTests: XCTestCase {
         XCTAssertEqual(expectedImagePath, vm.imagePath)
         XCTAssertEqual(Decimal(expectedRating), vm.rating)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func test_ProductDetailsViewModel_getImageData() throws {
+        let expectedImageData = UIImage(named: "placeholder")?.pngData()
+        let mockProduct = Product(id: "123", name: "Product1", description: "Description", price: "£23.00", imagePath: "sjkjfjksjf", rating: 2.3)
+        let mockUseCase = MockGetImageDataUseCase(imageData: expectedImageData)
+        let vm = DefaultProductDetailsViewModel(product: mockProduct, useCase: mockUseCase)
+        
+        XCTAssertEqual(vm.imageData, nil)
+        
+        vm.getImageData()
+        
+        XCTAssertEqual(vm.imageData, expectedImageData)
     }
-
 }

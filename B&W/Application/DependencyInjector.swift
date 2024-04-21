@@ -74,6 +74,11 @@ final class DependencyContainer {
                                           dependencies: self)
     }
     
+    /// A method to create an instance of `GetProductDetailsFlowCoordinator`.
+    /// - Parameters:
+    ///   - product: The product for which the flow coordinator is being created.
+    ///   - navigationController: The navigation controller to be used by the flow coordinator.
+    /// - Returns: An instance of `GetProductDetailsFlowCoordinator`.
     func makeGetProductDetailsFlowCoordinator(product: Product, navigationController: UINavigationController) -> GetProductDetailsFlowCoordinator {
         return GetProductDetailsFlowCoordinator(product: product, navigationController: navigationController, dependencies: self)
     }

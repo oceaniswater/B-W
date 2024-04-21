@@ -29,6 +29,7 @@ class DefaultProductDetailsViewModel: ProductDetailsViewModel, ObservableObject 
     @Published var description: String?
     @Published var rating: Decimal?
     @Published var imageData: Data?
+    var id: Product.Identifier
     
     private var useCase: GetImageDataUseCase?
     private var loadTask: Cancellable? { willSet { loadTask?.cancel() } }
@@ -39,6 +40,7 @@ class DefaultProductDetailsViewModel: ProductDetailsViewModel, ObservableObject 
         self.price = product.price
         self.description = product.description ?? ""
         self.rating = Decimal(product.rating ?? 0.0)
+        self.id = product.id
         self.useCase = useCase
     }
     
