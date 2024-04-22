@@ -19,7 +19,6 @@ public struct FiveStarView: View {
     var backgroundColor: Color
     var type: FiveStarsViewType
     
-    
     public init(
         rating: Decimal,
         color: Color = .red,
@@ -31,7 +30,6 @@ public struct FiveStarView: View {
         self.backgroundColor = backgroundColor
         self.type = type
     }
-    
     
     public var body: some View {
         HStack {
@@ -52,7 +50,6 @@ public struct FiveStarView: View {
                 Text("avg. \(rating) (\(Int.random(in: 100...10000)))")
                     .scaledToFill()
             }
-
         }
     }
 }
@@ -153,6 +150,6 @@ private struct ForegroundStars: View {
 }
 
 #Preview {
-    FiveStarView(rating: Decimal(3.6))
+    FiveStarView(rating: Decimal(3.6), type: .onlyStars)
         .frame(minWidth: 1, idealWidth: 200,maxWidth: 300, minHeight: 1, idealHeight: 16, maxHeight: 30, alignment: .center)
 }

@@ -72,27 +72,7 @@ struct ImageView: View {
                                                                            name: "Product",
                                                                            description:
                                                                             """
-                                                                            A home lab typically refers to a setup where
-                                                                            individuals create a small-scale environment for
-                                                                            testing, learning, and experimenting with various
-                                                                            technologies. Home labs are common among IT
-                                                                            professionals, enthusiasts, and students who want
-                                                                            to gain hands-on experience with different
-                                                                            hardware and software solutions.
-                                                                            Home labs can include a variety of components,
-                                                                            such as servers, network equipment, storage
-                                                                            devices, and virtualization platforms. They
-                                                                            provide a safe and controlled environment for
-                                                                            testing new technologies, practicing skills, and
-                                                                            developing expertise without the constraints of a
-                                                                            production environment.
-                                                                            Some common use cases for home labs include
-                                                                            learning about virtualization, networking, server
-                                                                            administration, cybersecurity, and other
-                                                                            IT-related disciplines. Home labs can range from
-                                                                            simple setups with a few computers to more
-                                                                            complex configurations with dedicated server
-                                                                            racks and specialized hardware.
+                                                                            A home lab typically refers to a setup where individuals create a small-scale environment for testing, learning, and experimenting with various technologies. Home labs are common among IT professionals, enthusiasts, and students who want to gain hands-on experience with different hardware and software solutions. Home labs can include a variety of components, such as servers, network equipment, storage devices, and virtualization platforms. They provide a safe and controlled environment for testing new technologies, practicing skills, and developing expertise without the constraints of a production environment. Some common use cases for home labs include learning about virtualization, networking, server administration, cybersecurity, and other IT-related disciplines. Home labs can range from simple setups with a few computers to more complex configurations with dedicated server racks and specialized hardware.
                                                                             """,
                                                                             price: "£20.00",
                                                                             imagePath: "https://picsum.photos/200/300",
