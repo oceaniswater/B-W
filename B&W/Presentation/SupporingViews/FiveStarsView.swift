@@ -8,21 +8,28 @@
 
 import SwiftUI
 
+public enum FiveStarsViewType {
+    case onlyStars, short, full
+}
+
 /// A view displaying a star rating with a given rating value.
 public struct FiveStarView: View {
     var rating: Decimal
     var color: Color
     var backgroundColor: Color
+    var type: FiveStarsViewType
     
     
     public init(
         rating: Decimal,
         color: Color = .red,
-        backgroundColor: Color = .gray
+        backgroundColor: Color = .gray,
+        type: FiveStarsViewType = .full
     ) {
         self.rating = rating
         self.color = color
         self.backgroundColor = backgroundColor
+        self.type = type
     }
     
     
@@ -35,8 +42,17 @@ public struct FiveStarView: View {
             .scaledToFit()
             .accessibilityHidden(true)
             
-            Text("avg. \(rating) (\(Int.random(in: 100...10000)))")
-                .scaledToFill()
+            switch type {
+            case .onlyStars:
+                Text("")
+            case .short:
+                Text("\(rating)")
+                    .scaledToFill()
+            case .full:
+                Text("avg. \(rating) (\(Int.random(in: 100...10000)))")
+                    .scaledToFill()
+            }
+
         }
     }
 }

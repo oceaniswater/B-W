@@ -21,7 +21,7 @@ struct ProductDetailsView<VM: ProductDetailsViewModel>: View {
                     .accessibilityHidden(false)
                     .accessibilityLabel("Product image")
                
-                FiveStarView(rating: vm.rating ?? 0.0, color: .yellow, backgroundColor: Color(uiColor: UIColor.systemGray5))
+                FiveStarView(rating: vm.rating ?? 0.0, color: .yellow, backgroundColor: Color(uiColor: UIColor.systemGray5), type: .full)
                     .frame(minWidth: 1, idealWidth: 200, maxWidth: 300, minHeight: 1, idealHeight: 16, maxHeight: 30, alignment: .center)
                     .accessibilityLabel("Product rating: \(vm.rating ?? 0.0)")
                 
