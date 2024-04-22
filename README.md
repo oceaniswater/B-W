@@ -1,35 +1,38 @@
-# iOS Technical Test
-Welcome!
+# iOS Complited Test
 
-Thank you for taking the time to complete this technical challenge. The project is written in Swift and follows the Clean Architecture pattern. It retrieves a list of products and displays a detailed product screen.
+Hi there! This is complited test. In this project I complited all 3 main task, implemented unit tests, improved code readability by adding clear and concise comments throughout my changes, adhered Apple's HIG and Clean Architecture principles.
 
-Once completed, please share your code either in github repository, or email the zipped folder to aleksandar@bloomandwild.com and let us know how much time you spent working on it.
+## Complited Tasks
 
-## Tasks
+- SwiftUI Migration.
+I migrated ProductDetails module to SwiftUI while using current project architecture.
+Firt of all, I created a new SwiftUI view. I added accessibility labels to each element in the view based on Apple's HIG and create subviews to make code more clear and readable.
+[Screenshot of the view]
+I created new view model based on SOLID principles using protocol.
+[Screenshot of the viewModel]
+To integrate this SwiftUI module to existing UIKit project I wrapped it into UIKit view controller using UIHostingController.
+[Screenshot of the wrapper]
+I adhered Clean Architecture principles and project architecture creating GetProductDetailsFlowCoordinator and modifying DependencyInjector and AppFlowCoordinator to make sure that I can create and use new module as usual. 
+[Screenshot of the DependencyInjector]
 
-- SwiftUI Migration: The current product details screen is built using UIKit. We'd like you to migrate it to SwiftUI, maintaining the existing functionality.
-- Image Loading Review: Identify any potential issues with the way the project loads images for products. If you find areas for improvement, refactor the code to optimize image loading while adhering to the project's Clean Architecture structure.
-- Integrate product rating: The API returns a "rating" field for each product. Your task is to parse this data and display it appropriately within the SwiftUI interface. This could involve creating a visual rating component (like stars) or displaying the numerical rating value.
+- Integrate product rating.
+  I created a custom reusable UI component for displying current product rating. It can be used everywhere. It made it more flexible by adding type property:
+  [Screenshot of the View Code]
+  [Screenshot of the Enum]
+  [Screenshot of the View type]
+  [Screenshot of the View type]
+  [Screenshot of the View type]
 
-## Bonus Points
+  
 
-- Implement unit tests for any code you modify or create.
-- Improve code readability by adding clear and concise comments throughout your changes.
-- Show us you take into account Apple's HIG by doing UI improvements
-- Feel free to suggest any other improvements you see within the project's scope.
+- Image Loading Review.
+  I refactored and optimised image loading by using existing asynchronus network service. I modified APIEndpoints, created useCase for image downloading, and modified generic decode function to handle Data type. I used it adhering Clean Architecture principles and project architecture.
+  [Screenshot of the endpoints]
+  [Screenshot of the decode func]
 
+## Editional
 
-## Benefits
+- I implemented unit tests.
+- I improved code readability by adding clear and concise comments throughout my changes.
+- I use Apple's HIG by adding accessibility to the new SwiftUI view
 
-By completing these tasks, you'll showcase your skills in:
-- Swift development
-- Clean Architecture principles
-- UIKit and SwiftUI UI development
-- Code optimization
-- Unit testing
-
-This will help us assess your suitability for the role.
-
-### Additional Notes
-Feel free to ask any clarifying questions you may have during the test.
-If successful you will be invited to walk through your solution with a couple of engineers and explain your architecture style and the decisions you have made. Please make sure you have the solution set up and ready to demo.
