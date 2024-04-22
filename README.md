@@ -1,48 +1,50 @@
-# iOS Complited Test
+# iOS Completed Test
 
-Hi there! This is complited test. In this project I complited all 3 main task, implemented unit tests, improved code readability by adding clear and concise comments throughout my changes, adhered Apple's HIG and Clean Architecture principles.
+Hi there! This is a completed test. In this project I completed all 3 main tasks, implemented unit tests, improved code readability by adding clear and concise comments throughout my changes, adhered to Apple's HIG and Clean Architecture principles.
 
-## Complited Tasks
+## Completed Tasks
 
-- SwiftUI Migration.
+- SwiftUI Migration
   
 I migrated ProductDetails module to SwiftUI while using current project architecture.
-Firt of all, I created a new SwiftUI view. I added accessibility labels to each element in the view based on Apple's HIG and create subviews to make code more clear and readable.
+Firt of all, I created a new SwiftUI view. I added accessibility labels to each element in the view based on Apple's HIG and create subviews to make code clearer and more readable.
 
 ![](https://github.com/oceaniswater/B-W/blob/main/Screenshots/ProductDetailsView.png)
 ![](https://github.com/oceaniswater/B-W/blob/main/Screenshots/ProductDetailsViewCode.png)
 
-I created new view model based on SOLID principles using protocol.
+I created a new view model based on SOLID principles using protocol.
 
 ![](https://github.com/oceaniswater/B-W/blob/main/Screenshots/ProductDetailsViewModel.png)
 
-To integrate this SwiftUI module to existing UIKit project I wrapped it into UIKit view controller using UIHostingController.
+To integrate this SwiftUI module with existing UIKit project I wrapped it into UIKit view controller using UIHostingController.
 
 ![](https://github.com/oceaniswater/B-W/blob/main/Screenshots/SwiftUIViewWrapper.png)
 
-I adhered Clean Architecture principles and project architecture creating GetProductDetailsFlowCoordinator and modifying DependencyInjector and AppFlowCoordinator to make sure that I can create and use new module as usual.
+By adhering to Clean Architecture principles and project architecture, I added GetProductDetailsFlowCoordinator and modified DependencyInjector and AppFlowCoordinator to make sure that I could create and use new module as usual.
 
 ![](https://github.com/oceaniswater/B-W/blob/main/Screenshots/DI.png)
 
-- Integrate product rating.
+- Product Rating Integration
   
-  I created a custom reusable UI component for displying current product rating. It can be used everywhere. It made it more flexible by adding type property:
+  I created a custom reusable UI component for displying current product rating. It can be used everywhere. I made it more flexible by adding a type property:
   
 ![](https://github.com/oceaniswater/B-W/blob/main/Screenshots/FiveStarsViewCode.png)
 ![](https://github.com/oceaniswater/B-W/blob/main/Screenshots/fullRating.png)
 ![](https://github.com/oceaniswater/B-W/blob/main/Screenshots/shortRating.png)
 ![](https://github.com/oceaniswater/B-W/blob/main/Screenshots/onlyStars.png)
 
-- Image Loading Review.
-- 
-  I refactored and optimised image loading by using existing asynchronus network service. I modified APIEndpoints, created useCase for image downloading, and modified generic decode function to handle Data type. I used it adhering Clean Architecture principles and project architecture.
+- Image Loading Review
+ 
+  I refactored and optimised image loading by using existing asynchronous network service. I modified APIEndpoints, created useCase for image downloading, and modified generic decode function to handle Data type. I relied on Clean Architecture principles and project architecture.
   
-  [Screenshot of the endpoints]
-  [Screenshot of the decode func]
+![](https://github.com/oceaniswater/B-W/blob/main/Screenshots/apiendpoints.png)
+![](https://github.com/oceaniswater/B-W/blob/main/Screenshots/decodefunc.png)
 
-## Editional
+## Additional
 
 - I implemented unit tests.
 - I improved code readability by adding clear and concise comments throughout my changes.
-- I use Apple's HIG by adding accessibility to the new SwiftUI view
+- I used Apple's HIG by adding accessibility to the new SwiftUI view
+- Some additional improvements (e.g. added activity view to the ProductDetailsViewCell)
+
 
