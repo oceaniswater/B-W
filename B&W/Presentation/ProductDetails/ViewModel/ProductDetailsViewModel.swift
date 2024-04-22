@@ -22,7 +22,7 @@ protocol ProductDetailsViewModel: ObservableObject {
     func getImageData()
 }
 
-class DefaultProductDetailsViewModel: ProductDetailsViewModel, ObservableObject {
+class DefaultProductDetailsViewModel: ProductDetailsViewModel {
     @Published var name: String?
     @Published var imagePath: String?
     @Published var price: String?
