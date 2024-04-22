@@ -7,7 +7,7 @@ Hi there! This is a completed test. In this project I completed all 3 main tasks
 - SwiftUI Migration
   
 I migrated ProductDetails module to SwiftUI while using current project architecture.
-Firt of all, I created a new SwiftUI view. I added accessibility labels to each element in the view based on Apple's HIG and create subviews to make code clearer and more readable.
+First of all, I created a new SwiftUI view. I added accessibility labels to each element in the view based on Apple's HIG and create subviews to make code clearer and more readable.
 
 ![](https://github.com/oceaniswater/B-W/blob/main/Screenshots/ProductDetailsView.png)
 ![](https://github.com/oceaniswater/B-W/blob/main/Screenshots/ProductDetailsViewCode.png)
